@@ -126,7 +126,6 @@ public class DMSActivity extends BaseActivity implements OnClickListener, IDevic
     }
 
     private void goContentActivity() {
-        /*Intent intent = new Intent(this, ContentActivity.class);
-        startActivity(intent);*/
+        
     }
 }
