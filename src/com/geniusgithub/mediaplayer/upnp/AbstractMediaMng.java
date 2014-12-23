@@ -17,7 +17,6 @@ public abstract class AbstractMediaMng {
 	protected List<Device> mDeviceList = new ArrayList<Device>();
 	protected Device mSelectedDevice;
 	
-	
 	public abstract void sendAddBrocast(Context context);
 	public abstract void sendRemoveBrocast(Context context, boolean isSelected);
 	public abstract void sendClearBrocast(Context context);
@@ -50,11 +49,9 @@ public abstract class AbstractMediaMng {
 		sendAddBrocast(mContext);
 	}
 	
-	public synchronized void removeDevice(Device d)
-	{	
+	public synchronized void removeDevice(Device d){	
 		int size = mDeviceList.size();
-		for(int i = 0; i < size; i++)
-		{
+		for(int i = 0; i < size; i++){
 			String udnString = mDeviceList.get(i).getUDN();
 			if (d.getUDN().equalsIgnoreCase(udnString)){
 				Device device = mDeviceList.remove(i);
@@ -72,8 +69,7 @@ public abstract class AbstractMediaMng {
 		}
 	}
 	
-	public synchronized void  clear()
-	{
+	public synchronized void  clear(){
 		mDeviceList = new ArrayList<Device>();
 		mSelectedDevice = null;
 		sendClearBrocast(mContext);

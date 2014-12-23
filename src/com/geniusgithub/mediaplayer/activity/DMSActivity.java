@@ -48,7 +48,7 @@ public class DMSActivity extends BaseActivity implements OnClickListener, IDevic
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dms_layout);
-        
+
         initView();
         initData();
     }
@@ -93,7 +93,7 @@ public class DMSActivity extends BaseActivity implements OnClickListener, IDevic
     }
 
     private void updateDeviceList() {
-        List<Device> list = mAllShareProxy.getDMSDeviceList();
+        List<Device> list = mAllShareProxy.getDMRDeviceList();
         mDevAdapter.refreshData(list);
     }
 
@@ -120,14 +120,13 @@ public class DMSActivity extends BaseActivity implements OnClickListener, IDevic
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        // TODO Auto-generated method stub
         Device device = (Device) parent.getItemAtPosition(position);
-        mAllShareProxy.setDMSSelectedDevice(device);
+        mAllShareProxy.setDMRSelectedDevice(device);
         goContentActivity();
     }
 
     private void goContentActivity() {
-        Intent intent = new Intent(this, ContentActivity.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(this, ContentActivity.class);
+        startActivity(intent);*/
     }
 }
